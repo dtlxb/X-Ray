@@ -15,7 +15,7 @@ for i in range(1, 26):
 
     w = img.shape[0]
     h = img.shape[1]
-    img = img[int(0.1*w):int(0.9*w),:]
+    img = img[int(0.1*w):int(0.9*w),int(0.2*h_img):int(0.85*h_img)]
 
 
     img = cv2.GaussianBlur(img,(3,3),0)
@@ -23,7 +23,7 @@ for i in range(1, 26):
     img = cv2.Canny(img, 50, 150) # 50， 150
 
 
-    img = cv2.dilate(img, None, iterations = 2)
+    img = cv2.dilate(img, None, iterations = 3)
     #img = cv2.erode(img, None, iterations = 1)
 
 
